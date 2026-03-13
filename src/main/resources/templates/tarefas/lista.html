@@ -23,6 +23,12 @@
         <a th:href="@{/tarefas?filtro=pendentes}" class="btn btn-primary" th:classappend="${filtro == 'pendentes'} ? 'active'">Pendentes</a>
         <a th:href="@{/tarefas?filtro=concluidas}" class="btn btn-primary" th:classappend="${filtro == 'concluidas'} ? 'active'">Concluídas</a>
 
+        <p>
+            Você tem 
+            <strong th:text="${total}"></strong> tarefas 
+            (<span th:text="${pendentes}"></span> pendentes, 
+            <span th:text="${concluidas}"></span> concluídas)
+        </p>
         <table th:if="${!#lists.isEmpty(tarefas)}" class="table">
             <thead>
                 <tr>
