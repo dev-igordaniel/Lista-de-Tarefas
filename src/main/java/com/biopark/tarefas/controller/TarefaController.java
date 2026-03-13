@@ -37,6 +37,13 @@ public class TarefaController {
             default:
                 model.addAttribute("tarefas", tarefaService.listarTodas());
         }
+         int total = tarefaService.listarTodas().size();
+        int pendentes = tarefaService.listarPendentes().size();
+        int concluidas = tarefaService.listarConcluidas().size();
+
+        model.addAttribute("total", total);
+        model.addAttribute("pendentes", pendentes);
+        model.addAttribute("concluidas", concluidas);
         return "tarefas/lista";
     }
 
