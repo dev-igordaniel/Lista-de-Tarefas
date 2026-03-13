@@ -1,65 +1,96 @@
-# Gerenciador de Tarefas (ToDo List)
+# Gerenciador de Tarefas
 
-Aplicação Spring Boot com Thymeleaf para gerenciamento de tarefas.
+Projeto desenvolvido em **Java utilizando Spring Boot e Thymeleaf** para gerenciamento de tarefas.
 
-## Tecnologias
+A aplicação permite criar, editar, excluir e acompanhar o status de tarefas.
 
-- Java 21
-- Spring Boot 4.0.3
-- Thymeleaf
-- Maven
-- Bean Validation (Jakarta Validation)
+---
 
-## Como Executar
+# Funcionalidades
 
-### Pré-requisitos
+* Criar novas tarefas
+* Editar tarefas existentes
+* Excluir tarefas
+* Alternar status entre **pendente** e **concluída**
+* Filtrar tarefas por:
 
-- Java 21 instalado
-- Maven instalado (ou use o wrapper `./mvnw`)
+  * Todas
+  * Pendentes
+  * Concluídas
+* Exibir estatísticas de tarefas:
 
-### Executando
+  * Total de tarefas
+  * Quantidade de pendentes
+  * Quantidade de concluídas
+
+---
+
+# Tecnologias Utilizadas
+
+* Java
+* Spring Boot
+* Spring MVC
+* Thymeleaf
+* Maven
+* CSS
+
+---
+
+# Requisitos
+
+Para executar o projeto é necessário ter instalado:
+
+* **Java 17** ou superior
+* **Git**
+
+O projeto utiliza **Maven Wrapper**, portanto **não é necessário instalar Maven separadamente**.
+
+---
+
+# Como Executar o Projeto
+
+## 1 - Clonar o repositório
 
 ```bash
-# Usando Maven Wrapper
+git clone https://github.com/dev-igordaniel/Lista-de-Tarefas.git
+```
+
+---
+
+## 2 - Acessar a pasta do projeto
+
+```bash
+cd Lista-de-Tarefas
+```
+
+---
+
+## 3 - Executar a aplicação
+
+### Windows
+
+```bash
+mvnw.cmd spring-boot:run
+```
+
+### Linux / Mac
+
+```bash
 ./mvnw spring-boot:run
-
-# Ou usando Maven instalado
-mvn spring-boot:run
 ```
 
-A aplicação será iniciada na porta **8080**.
+---
 
-## URLs Disponíveis
+## 4 - Acessar no navegador
 
-| URL                          | Método | Descrição                      |
-|------------------------------|--------|--------------------------------|
-| `/tarefas`                   | GET    | Listar todas as tarefas        |
-| `/tarefas/novo`              | GET    | Formulário para nova tarefa    |
-| `/tarefas/editar/{id}`       | GET    | Formulário para editar tarefa  |
-| `/tarefas/salvar`            | POST   | Salvar tarefa (criar/atualizar)|
-| `/tarefas/excluir/{id}`      | POST   | Excluir tarefa                 |
-| `/tarefas/status/{id}`       | GET    | Alternar status da tarefa      |
-
-## Estrutura do Projeto
+Após iniciar a aplicação, abra o navegador e acesse:
 
 ```
-com.biopark.tarefas/
-├── TarefasAppApplication.java    # Classe principal
-├── controller/
-│   └── TarefaController.java     # Controlador MVC
-├── service/
-│   └── TarefaService.java        # Regras de negócio
-├── repository/
-│   └── TarefaRepository.java     # Armazenamento em memória
-└── model/
-    └── Tarefa.java                # Entidade Tarefa
+http://localhost:8080/tarefas
 ```
 
-## Funcionalidades
+---
 
-- Criar, editar e excluir tarefas
-- Alternar status entre "Pendente" e "Concluída"
-- Validação de formulários com mensagens de erro
-- Mensagens flash de sucesso/erro
-- 3 tarefas de exemplo pré-cadastradas
-- Interface responsiva com CSS customizado
+# Autor
+
+Projeto desenvolvido por **Igor Daniel** como atividade acadêmica.
